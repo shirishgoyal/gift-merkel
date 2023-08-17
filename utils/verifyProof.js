@@ -7,6 +7,7 @@ function verifyProof(proof, leaf, root) {
   proof = proof.map(({data, left}) => ({ 
     left, data: hexToBytes(data)
   }));
+  
   let data = keccak256(Buffer.from(leaf));
 
   for (let i = 0; i < proof.length; i++) {
